@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    android:installLocation="internalOnly"
+    package="com.facelock4appspro"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission
+        android:name="android.permission.CAMERA" />
+    <uses-permission
+        android:name="android.permission.GET_TASKS" />
+    <uses-permission
+        android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission
+        android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="com.android.vending.CHECK_LICENSE" />
+    <uses-permission
+        android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission
+        android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission
+        android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission
+        android:name="android.permission.WAKE_LOCK" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <supports-screens
+        android:anyDensity="true"
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:xlargeScreens="true" />
+    <application
+        android:label="@string/app_name"
+        android:icon="@drawable/ic_launcher">
+        <activity
+            android:label="@string/app_name"
+            android:name=".MainActivity">
+            <intent-filter>
+                <action
+                    android:name="android.intent.action.MAIN" />
+                <category
+                    android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:name="com.facedklib.FaceRecActivity"
+            android:taskAffinity="com.facelock4appspro.Auth"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:configChanges="keyboardHidden" />
+        <activity
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:name="com.facedklib.PasswordActivity"
+            android:taskAffinity="com.facelock4appspro.Auth"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask" />
+        <activity
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:name="com.facedklib.PatternActivity"
+            android:taskAffinity="com.facelock4appspro.Auth"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask" />
+        <activity
+            android:theme="@android:style/Theme.Wallpaper.NoTitleBar.Fullscreen"
+            android:name="com.facedklib.UActivity"
+            android:taskAffinity="com.facelock4appspro.Auth"
+            android:launchMode="singleTask" />
+        <activity
+            android:label="@string/tasker_plugin_name"
+            android:icon="@drawable/ic_launcher"
+            android:name=".EditActivity">
+            <intent-filter>
+                <action
+                    android:name="com.twofortyfouram.locale.intent.action.EDIT_SETTING" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.facedklib.FaceTrainActivity"
+            android:launchMode="singleTask"
+            android:configChanges="keyboardHidden" />
+        <activity
+            android:name="com.facedklib.FaceActivity"
+            android:launchMode="singleTask"
+            android:configChanges="keyboardHidden" />
+        <activity
+            android:name=".ManageApplications"
+            android:configChanges="keyboardHidden|orientation" />
+        <service
+            android:name=".FaceLockService" />
+        <receiver
+            android:name="ABR"
+            android:exported="false" />
+        <receiver
+            android:name=".FaceBootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action
+                    android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action
+                    android:name="android.intent.action.PACKAGE_REPLACED" />
+                <data
+                    android:scheme="package"
+                    android:path="com.facelock4appspro" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".FireReceiver">
+            <intent-filter>
+                <action
+                    android:name="com.twofortyfouram.locale.intent.action.FIRE_SETTING" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

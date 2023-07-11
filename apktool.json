@@ -1,0 +1,36 @@
+{
+  "apkFileName": "FaceLock_Pro_v2.7.7(78)_src.apk",
+  "VersionInfo": {
+    "versionName": "2.7.7",
+    "versionCode": "78"
+  },
+  "UsesFramework": {
+    "ids": [1],
+    "tag": null
+  },
+  "unknownFiles": {
+    "AndroidClock.ttf": "8",
+    "Roboto-Regular.ttf": "8",
+    "Roboto-Thin.ttf": "8"
+  },
+  "PackageInfo": {
+    "forcedPackageId": "127",
+    "renameManifestPackage": null
+  },
+  "doNotCompress": [
+    "resources.arsc",
+    "png",
+    "res/raw/data_a2.dat",
+    "res/raw/ed3s.dat",
+    "jpg"
+  ],
+  "isFrameworkApk": false,
+  "compressionType": false,
+  "sparseResources": true,
+  "version": "2.4.0-221119",
+  "sharedLibrary": false,
+  "sdkInfo": {
+    "minSdkVersion": "9",
+    "targetSdkVersion": "11"
+  }
+}
