@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/P_Initial_configuration">
+        <CheckBoxPreference
+            android:title="@string/P_Enable_FaceLock"
+            android:key="lockActive"
+            android:defaultValue="false"
+            android:summaryOn="@string/P_FaceLock_is_enabled"
+            android:summaryOff="@string/P_FaceLock_is_disabled"
+            android:disableDependentsState="false" />
+        <Preference
+            android:title="@string/P_Train"
+            android:key="openTrain"
+            android:summary="@string/P_Train_summary"
+            android:widgetLayout="@layout/arrow" />
+        <PreferenceScreen
+            android:title="@string/P_SetPPP"
+            android:key="PPPpref"
+            android:summary="@string/P_SetPPP_summary"
+            android:widgetLayout="@layout/emptylayout"
+            android:defaultValue="screen">
+            <com.facelock4appspro.PasswordDialogPreference
+                android:title="@string/P_SetPass"
+                android:key="passwd"
+                android:summary="@string/P_SetaPass"
+                android:dialogTitle="@string/P_SetPass"
+                android:dialogMessage="@string/P_EnterPass"
+                android:positiveButtonText="@string/OKbutton"
+                android:negativeButtonText="@string/CancelButton"
+                android:dialogLayout="@layout/passwd_dlg" />
+            <com.facelock4appspro.PasswordDialogPreference
+                android:title="@string/SetPIN"
+                android:key="passwd"
+                android:summary="@string/P_SetaPIN"
+                android:dialogTitle="@string/SetPIN"
+                android:dialogMessage="Enter PIN"
+                android:positiveButtonText="@string/OKbutton"
+                android:negativeButtonText="@string/CancelButton"
+                android:dialogLayout="@layout/passwdpin_dlg" />
+            <com.facelock4appspro.PatternDialogPreference
+                android:title="@string/PtD_SetPattern"
+                android:summary="@string/P_SetaPatt"
+                android:dialogTitle="@string/PtD_SetPattern"
+                android:dialogMessage="@string/P_EnterPatt"
+                android:positiveButtonText="@string/OKbutton"
+                android:negativeButtonText="@string/CancelButton"
+                android:dialogLayout="@layout/pattern_dlg" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/P_PhoneLS">
+        <CheckBoxPreference
+            android:title="@string/P_UsePhoneLS"
+            android:key="kglock"
+            android:dependency="lockActive"
+            android:defaultValue="false"
+            android:summaryOn="@string/P_PhoneLS_sumOn"
+            android:summaryOff="@string/P_PhoneLS_sumOff" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/P_Options">
+        <Preference
+            android:title="@string/P_LockedApps"
+            android:key="openAppList"
+            android:summary="@string/P_LockedApps_sum" />
+        <ListPreference
+            android:entries="@array/security"
+            android:title="@string/P_Seclvl"
+            android:key="securityLevel"
+            android:summary="@string/P_Seclvl_sum"
+            android:defaultValue="2"
+            android:entryValues="@array/security_values" />
+        <PreferenceScreen
+            android:title="@string/P_LockOpts"
+            android:summary="@string/P_LockOpts_sum"
+            android:defaultValue="screen">
+            <CheckBoxPreference
+                android:title="@string/P_AlwaysL"
+                android:key="alwaysLocked"
+                android:defaultValue="true"
+                android:summaryOn="@string/P_AlwaysL_sumOn"
+                android:summaryOff="@string/P_AlwaysL_sumOff"
+                android:disableDependentsState="true" />
+            <ListPreference
+                android:entries="@array/lockdelay"
+                android:title="@string/P_DelayLock"
+                android:key="timeLock"
+                android:summary="@string/P_DelayLock_sum"
+                android:dependency="alwaysLocked"
+                android:defaultValue="0"
+                android:entryValues="@array/lockdelay_values" />
+            <ListPreference
+                android:entries="@array/recto"
+                android:title="@string/P_RecRetry"
+                android:key="recTimeout"
+                android:summary="@string/P_RecRetry_sum"
+                android:defaultValue="1"
+                android:entryValues="@array/recto_values" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/P_AdvOpts">
+        <PreferenceScreen
+            android:title="@string/P_CamOpts"
+            android:summary="@string/P_CamOpts_sum">
+            <CheckBoxPreference
+                android:title="@string/P_UseFrontCam"
+                android:key="useFrontCamera"
+                android:summary="@string/P_UseFrontCam_sum"
+                android:defaultValue="true" />
+            <ListPreference
+                android:entries="@array/userrotate"
+                android:title="@string/P_ImgRot"
+                android:key="userRotate"
+                android:summary="@string/P_ImgRot_sum"
+                android:defaultValue="0"
+                android:entryValues="@array/userrotate_values" />
+            <Preference
+                android:title="@string/P_TestView"
+                android:key="openTest"
+                android:summary="@string/P_TestView_sum" />
+            <CheckBoxPreference
+                android:title="@string/P_OptFacedet"
+                android:key="disableMO"
+                android:summary="@string/P_OptFacedet_sum"
+                android:defaultValue="false" />
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:title="@string/P_VisualOpts"
+            android:summary="@string/P_VisualOpts_sum">
+            <CheckBoxPreference
+                android:title="@string/P_ShowNotif"
+                android:key="showNotification"
+                android:summary="@string/P_ShowNotif_sum"
+                android:defaultValue="true"
+                android:disableDependentsState="false" />
+            <CheckBoxPreference
+                android:title="@string/P_ShowWPapp"
+                android:key="showBGapp"
+                android:summary="@string/P_ShowWPapp_sum"
+                android:defaultValue="true" />
+            <CheckBoxPreference
+                android:title="@string/P_ShowWPls"
+                android:key="showBGlockscreen"
+                android:summary="@string/P_ShowWPls_sum"
+                android:defaultValue="true" />
+            <CheckBoxPreference
+                android:title="@string/P_ShowPatt"
+                android:key="showPattern"
+                android:summary="@string/P_ShowPatt_sum"
+                android:defaultValue="false" />
+            <ListPreference
+                android:entries="@array/lockcolor"
+                android:title="@string/P_IconColor"
+                android:key="lockColor"
+                android:summary="@string/P_IconColor_sum"
+                android:dependency="showNotification"
+                android:defaultValue="0"
+                android:entryValues="@array/lockcolor_values" />
+            <CheckBoxPreference
+                android:title="@string/P_Show24"
+                android:key="show24hClock"
+                android:defaultValue="false"
+                android:summaryOn="@string/P_Show24_sumOn"
+                android:summaryOff="@string/P_Show24_sumOff" />
+            <CheckBoxPreference
+                android:title="@string/P_ShowLA"
+                android:key="showLockedApp"
+                android:summary="@string/P_ShowLA_sum"
+                android:defaultValue="true" />
+            <CheckBoxPreference
+                android:title="@string/P_ShowLAN"
+                android:key="showLockedAppName"
+                android:summary="@string/P_ShowLA_sum"
+                android:defaultValue="true" />
+            <CheckBoxPreference
+                android:title="@string/P_Hide_IconsClock"
+                android:key="hideIconsClock"
+                android:summary="@string/P_Hide_IconsClock_sum"
+                android:defaultValue="false" />
+            <CheckBoxPreference
+                android:title="@string/P_ShowVignette"
+                android:key="showVignette"
+                android:summary="@string/P_ShowVignette_sum"
+                android:defaultValue="true" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/P_About"
+        android:key="about">
+        <Preference
+            android:title="@string/P_Rate"
+            android:key="openRate"
+            android:summary="@string/P_Rate_sum"
+            android:widgetLayout="@layout/star" />
+        <Preference
+            android:title="@string/P_Share"
+            android:key="share"
+            android:summary="@string/P_Share_sum" />
+        <Preference
+            android:title="@string/P_TipsFAQ"
+            android:key="openTipsFAQ"
+            android:summary="@string/P_TipsFAQ_sum" />
+        <Preference
+            android:title="@string/P_Feedback"
+            android:key="openFeedback"
+            android:summary="@string/P_Feedback_sum" />
+        <Preference
+            android:title="@string/P_BugRep"
+            android:key="openReport"
+            android:summary="@string/P_BugRep_sum" />
+    </PreferenceCategory>
+</PreferenceScreen>
