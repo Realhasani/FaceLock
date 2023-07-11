@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:id="@id/layoutRec"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:keepScreenOn="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.facedklib.FacePreviewGroup
+        android:gravity="top"
+        android:id="@id/facePreviewR"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+    <RelativeLayout
+        android:gravity="bottom"
+        android:id="@id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:id="@id/layoutButtons"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+            <Button
+                android:textColor="#ffe0e0e0"
+                android:id="@id/buttonEnterPasswd"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8.0dip"
+                android:layout_marginTop="3.0dip"
+                android:layout_marginRight="8.0dip"
+                android:layout_marginBottom="3.0dip"
+                android:text="@string/FRA_UnlockPass" />
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout
+        android:gravity="left"
+        android:orientation="horizontal"
+        android:id="@id/linearLayoutAppicon"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@id/iconUnlockApp"
+            android:visibility="invisible"
+            android:layout_width="36.0dip"
+            android:layout_height="36.0dip"
+            android:layout_marginLeft="16.0dip"
+            android:layout_marginTop="16.0dip" />
+        <TextView
+            android:textColor="#ffa0a0a0"
+            android:id="@id/textUnlockApp"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16.0dip"
+            android:layout_marginTop="16.0dip"
+            android:text="" />
+    </LinearLayout>
+</FrameLayout>

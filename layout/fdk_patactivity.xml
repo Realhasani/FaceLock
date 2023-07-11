@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:id="@id/layoutProot"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:id="@id/layoutPat2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView
+            android:textAppearance="?android:textAppearanceLarge"
+            android:id="@id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4.0dip"
+            android:text="@string/EnterPattern"
+            android:layout_centerHorizontal="true" />
+        <com.facedklib.LockPatternView
+            android:layout_gravity="bottom|center"
+            android:id="@id/lockPattern"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="8.0dip"
+            android:layout_marginTop="8.0dip"
+            android:layout_marginRight="8.0dip"
+            android:layout_marginBottom="4.0dip"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</FrameLayout>

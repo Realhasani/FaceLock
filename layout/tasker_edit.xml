@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:id="@id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12.0dip"
+        android:src="@drawable/ic_launcher" />
+    <TextView
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_gravity="center_horizontal"
+        android:id="@id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8.0dip"
+        android:text="Please select an action:" />
+    <Button
+        android:layout_gravity="center_horizontal"
+        android:id="@id/buttonEn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4.0dip"
+        android:text="Enable FaceLock" />
+    <Button
+        android:layout_gravity="center_horizontal"
+        android:id="@id/buttonDis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4.0dip"
+        android:text="Disable FaceLock" />
+    <Button
+        android:layout_gravity="center_horizontal"
+        android:id="@id/buttonTog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4.0dip"
+        android:text="Toggle FaceLock" />
+</LinearLayout>

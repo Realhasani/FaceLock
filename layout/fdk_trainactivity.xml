@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:id="@id/layoutTrain"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:keepScreenOn="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.facedklib.FacePreviewGroup
+        android:gravity="top"
+        android:id="@id/facePreviewT"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+    <RelativeLayout
+        android:gravity="bottom"
+        android:id="@id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:id="@id/layoutButtons"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+            <Button
+                android:enabled="false"
+                android:id="@id/buttonTrain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8.0dip"
+                android:layout_marginTop="3.0dip"
+                android:layout_marginRight="3.0dip"
+                android:layout_marginBottom="3.0dip"
+                android:text="@string/AddFace"
+                android:drawableLeft="@drawable/create_contact"
+                android:layout_weight="1.0"
+                android:onClick="trainPressed" />
+            <Button
+                android:id="@id/buttonResetTrain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3.0dip"
+                android:layout_marginTop="3.0dip"
+                android:layout_marginRight="3.0dip"
+                android:layout_marginBottom="3.0dip"
+                android:text="@string/EraseAll"
+                android:drawableLeft="@drawable/ic_menu_delete"
+                android:layout_weight="1.0"
+                android:onClick="resetPressed" />
+            <Button
+                android:enabled="true"
+                android:id="@id/buttonDoneTrain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3.0dip"
+                android:layout_marginTop="3.0dip"
+                android:layout_marginRight="8.0dip"
+                android:layout_marginBottom="3.0dip"
+                android:text="@string/Done"
+                android:drawableLeft="@drawable/button_done"
+                android:layout_weight="1.0"
+                android:onClick="donePressed" />
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>
